@@ -5,7 +5,9 @@
 		<meta charset="utf-8">
 	</head>
 	<body>
-		<h1>Hei maailma!</h1>
-		<p>Terve</p>
+		<h1>Looping things!</h1>
+		{% for thing in things %}
+		<p>{{ thing }}</p>
+		{%endfor%}
 	</body>
 </html>
