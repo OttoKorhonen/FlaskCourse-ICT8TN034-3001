@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content  %}
+	{% if True %}
+		<p>Tosi on</p>
+	{% endif %}
+
+	{% if things  %}
+		<p>Juttuja löytyy</p>
+	{% else  %}
+		<p>Ei löytynyt juttuja</p>
+	{% endif  %}
+{% endblock content %}

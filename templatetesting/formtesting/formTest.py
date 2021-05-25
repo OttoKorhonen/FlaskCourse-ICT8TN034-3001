@@ -1,0 +1,18 @@
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route("/")
+def base():
+	return render_template("base.html")
+
+@app.route("/getform")
+def getform():
+	return render_template("getform.html")
+
+@app.route("/postform")
+def postform():
+        return render_template("postform.html")
+
+
+app.run()
