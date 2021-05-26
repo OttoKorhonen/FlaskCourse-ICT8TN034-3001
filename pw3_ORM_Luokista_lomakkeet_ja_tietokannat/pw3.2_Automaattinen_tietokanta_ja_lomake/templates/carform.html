@@ -1,0 +1,19 @@
+{% set title="Add a car" %}
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<form method=POST>
+{% for car in form %}
+<p>
+{% if not car.flags.hidden %} 
+	{{ car.label }}
+{% endif  %}
+{{ car  }}
+</p>
+{% endfor %}
+<input type=submit>
+</form>
+
+{% endblock content %}

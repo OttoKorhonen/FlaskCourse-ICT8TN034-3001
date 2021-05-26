@@ -1,0 +1,11 @@
+{% set title="second page" %}
+{% extends "base.thml"%}
+
+{% block content %}
+	<p>Second page</p>
+{% if get_flashed_messages() %}                                         
+                        {% for message in get_flashed_messages() %}                     
+                                <p><b>{{ message }}</b></p>                             
+                        {% endfor %}
+                {% endif %}
+{% endblock%}

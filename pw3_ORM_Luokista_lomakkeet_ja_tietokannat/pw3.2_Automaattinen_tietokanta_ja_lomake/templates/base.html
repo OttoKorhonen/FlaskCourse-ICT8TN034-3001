@@ -1,0 +1,22 @@
+{% if not title%}
+	{% set title="Car page"  %}
+{% endif%}
+<!doctype html>
+<html lan=en>
+	<head>
+		<title>{{ title }}</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+	<nav>
+		<a href="/carform">To form page</a>
+		<a href="/">To front page</a>
+	</nav>
+	<h1>{{ title }}</h1>
+	{% block content  %}
+	{% for car in cars%}
+		<p>{{ car.brand }}{{car.model}}{{car.year}}{{car.fuel}}</p>
+	{% endfor  %}
+	{% endblock content  %}
+	</body>
+</html>
