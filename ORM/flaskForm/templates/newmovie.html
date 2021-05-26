@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+	<p>Add new movie</p>
+
+	<form method=POST>
+		{% for movie in form %}
+		<p>{{ movie.label }}: {{ movie }}</p>
+		{% endfor %}
+		<input type=submit>
+	</form>
+{% endblock content %}
