@@ -13,7 +13,9 @@ class Comment(db.Model):
 def initMe():
 	db.create_all()
 	comment = Comment(text="Heipparallaa", name="Otto")
+	secondComment = Comment(text="Tietokantakikkailua", name="Otto")
 	db.session.add(comment)
+	db.session.add(secondComment)
 
 	db.session.commit()
 
