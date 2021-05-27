@@ -48,9 +48,19 @@ def addMovie(id=None):
 		db.session.commit()
 
 		flash("New movie added")
-		redirect("/")
+		return redirect("/")
 
 	return render_template("new.html", form=form)
+
+@app.route("/<int:id>/delete")
+def delete(id):
+	movie = Movie.query.get_or_404(id)
+	db.session.delete(movie)
+	db.session.commit()
+
+	flash("Movie deleted")
+	return redirect("/")
+
 
 @app.route("/")
 def index():
