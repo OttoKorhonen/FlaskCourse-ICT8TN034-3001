@@ -1,0 +1,8 @@
+{% set title="Movie list page"  %}
+{% extends "base.html"  %}
+
+{% block content  %}
+	{% for movie in movies %}
+		<p>{{movie.name}} {{movie.director}} {{movie.rating}} {{movie.comment}}</p>
+	{% endfor%}
+{% endblock  %}

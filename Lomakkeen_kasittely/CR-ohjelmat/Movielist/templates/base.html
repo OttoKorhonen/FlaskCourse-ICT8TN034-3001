@@ -1,0 +1,21 @@
+{% if not title%}
+{% set title ="Movies" %}
+{% endif  %}
+
+<!doctype html>
+<html lang=en>
+	<head>
+		<title>{{ title  }}</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<nav>
+			<a href="/">Movie list</a> - 
+			<a href="/new">Add movie</a>
+		</nav>
+		<h1>{{ title }}</h1>
+		{% block content %}
+		<p>Hur mår du idag?</p>
+		{% endblock content %}
+	</body>
+</html>
