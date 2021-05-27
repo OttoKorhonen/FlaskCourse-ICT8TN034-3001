@@ -1,0 +1,19 @@
+{% if not title %}
+{% set title="base page" %}
+{% endif %}
+<!doctype html>
+<html lang=en>
+<head>
+	<title>{{ title }}</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<nav>
+		<a href="add">Add new product</a>
+		<a href="/">To shopping list</a>
+	</nav>
+	<h1>{{ title }}</h1>
+	{% block content%}
+	{% endblock %}
+</body>
+</html>

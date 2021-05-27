@@ -1,0 +1,8 @@
+{% set title="Shoppinglist"  %}
+{% extends "base.html"  %}
+
+{% block content %}
+{% for item in shoppinglists  %}
+<p> {{item.product}}{{item.amount}}</p>
+{% endfor%}
+{% endblock  %}
