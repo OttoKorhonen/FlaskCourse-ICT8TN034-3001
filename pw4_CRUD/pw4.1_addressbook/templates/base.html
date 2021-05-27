@@ -1,0 +1,24 @@
+{% if not title  %}
+{% set title = "Address book"  %}
+{% endif  %}
+
+<!doctype html>
+<html lang=en>
+	<head>
+		<title>{{ title  }}</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<nav>
+			<a href="/">Address book</a> - 
+			<a href="/add">Add person</a>
+		</nav>
+		{% for msg in get_flashed_messages()  %}
+			<p>{{ msg  }}</p>
+		{% endfor  %}
+		<h1>{{ title }}</h1>
+		{% block content %}
+		<p>Flask är kul!</p>
+		{% endblock content %}
+	</body>
+</html>

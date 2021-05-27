@@ -1,0 +1,12 @@
+{% set title="Address book"  %}
+{% extends "base.html"  %}
+
+{% block content  %}
+	{% for person in persons %}
+		<p>Name: {{person.name}}, Email:  {{person.email}}, Address:  {{person.address}}, Phone: {{person.phone}}, Favorite song: {{person.favoriteSong}}, Favorite tv-show: {{person.favoriteShow}}
+<a href="{{ person.id }}/edit">Edit</a>
+
+<a href="{{ person.id }}/delete">Delete</a>
+</p>
+	{% endfor%}
+{% endblock  %}
