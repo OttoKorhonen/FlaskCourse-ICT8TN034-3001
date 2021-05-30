@@ -1,0 +1,23 @@
+{% set title="Register user" %}
+{% extends "base.html" %}
+
+{% block content %}
+
+        <form method=POST>
+                {% for field in form %}
+                        {% if not field.flags.hidden %}
+                                {{ field.label }}
+                        {% endif %}
+
+                        {{ field }}
+
+                        {% for error in field.errors %}
+                                <b>{{ error }}</b>
+                        {% endfor %}
+
+                        <br>
+                {% endfor %}
+                <input type=submit>
+        </form>
+
+{% endblock content %}
