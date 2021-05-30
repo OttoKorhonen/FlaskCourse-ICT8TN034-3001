@@ -1,0 +1,14 @@
+{% set title="Book page" %}
+{% extends "base.html" %}
+
+{% block content %}
+	{% for book in books  %}
+
+	<p>
+		<a href="book/{{ book.id }}/edit">
+			{{ book.name  }}
+		</a>
+		<a href="/book/{{ book.id  }}/delete">Delete</a>
+	</p>
+	{% endfor  %}
+{% endblock content %}
