@@ -1,0 +1,34 @@
+{% set title="Instructions" %}
+{% extends "base.html"  %}
+
+
+{% block content  %}
+<h2>Pelin valmistelu</h2>
+<p>Numeroidut keilat asetetaan tiiviiseen muodostelmaan. 
+Heittolinja piirretään 3-4 metrin päähän tästä muodostelmasta.</p>
+
+<br>
+<h2>Pelin kulku</h2>
+<p>
+<b>Heittojärjestys:</b> Ensimmäisessä pelissä heittojärjestys arvotaan. 
+Seuraavissa peleissä heittojärjestys muodostetaan edellisen pelin tulosten perusteella pienimmästä pistemäärästä suurimpaan.
+</p>
+
+<p>
+<b>Pelin aloitus:</b> Ensimmäinen pelaaja heittää heittokapulan keilamuodostelmaa kohti ja yrittää kaataa keiloja. heittokapula heitetään aina alakautta.
+<br>
+</p>
+<p>
+<b>Kaatunut keila:</b> Keilaa ei lasketa kaatuneeksi jos se nojaa toista keilaa tai heittokapulaa vasten. Heiton jälkeen keilat nostetaan takaisin pystyyn siihen paikkaan, mihin ne ovat heiton tuloksenapäätyneet.
+<br>
+</p>
+<p>
+<b>Pisteiden lasku:</b> Jos yksi keila kaatuu, pisteet = keilaan kirjoitettu numero. Jos useampi kuin yksi keila kaatuu, pisteet = kaatuneiden keilojen lukumäärä.
+<br>
+</p>
+<p>
+<b>Pelin loppu:</b> Jos pelaaja jää ilman tulosta kolmella peräkkäisellä heittokierroksella, hän putoaa pelistä ja toimii pisteiden kirjurina. Peli päättyy, kun yksi pelaajista saa kerättyä tasan 50 pistettä. Jos pelaaja saa yli 50 pistettä, hänen pistemääränsä lasketaan 25 pisteeseen.
+</p>
+
+
+{% endblock %}

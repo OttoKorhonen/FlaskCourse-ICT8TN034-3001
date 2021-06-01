@@ -1,0 +1,50 @@
+{% if not title  %}
+	{% set title="Mölkky scoreboard"  %}
+{% endif %}
+<!doctype>
+<html lan=en>
+	<head>
+		<title>{{ title  }}</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			table {
+  				font-family: arial, sans-serif;
+  				border-collapse: collapse;
+ 				width: 100%;
+				}
+
+				td, th {
+  				border: 1px solid #dddddd;
+  				text-align: left;
+  				padding: 8px;
+				}
+
+				tr:nth-child(even) {
+  				background-color: #dddddd;
+				}
+</style>
+	</head>
+	<body>
+
+	<nav>
+		<a href="/">Home</a> -  
+		<a href="/add">New game</a> - 
+		<a href="/instructions">Game instructions</a> - 
+		{% if currentUser()  %}	
+			<a href="/user/logout">Log out</a>
+				Signed in as: {{ currentUser().email  }}
+		{% else  %}
+			<a href="/user/login">Login</a> - 
+			<a href="user/register">Register</a>
+		{% endif  %}
+	</nav>
+		{% for msg in get_flashed_messages() %}
+                        <p>{{ msg }}</p>
+                {% endfor %}
+
+	<h1>{{ title  }}</h1>
+	{% block content  %}
+	{% endblock  %}
+	</body>
+<!html>
