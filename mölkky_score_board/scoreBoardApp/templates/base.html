@@ -7,6 +7,23 @@
 		<title>{{ title  }}</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			table {
+  				font-family: arial, sans-serif;
+  				border-collapse: collapse;
+ 				width: 100%;
+				}
+
+				td, th {
+  				border: 1px solid #dddddd;
+  				text-align: left;
+  				padding: 8px;
+				}
+
+				tr:nth-child(even) {
+  				background-color: #dddddd;
+				}
+</style>
 	</head>
 	<body>
 
@@ -18,7 +35,7 @@
 			<a href="/user/logout">Log out</a>
 				Signed in as: {{ currentUser().email  }}
 		{% else  %}
-			<a href="/user/login">Login</a>
+			<a href="/user/login">Login</a> - 
 			<a href="user/register">Register</a>
 		{% endif  %}
 	</nav>

@@ -15,6 +15,7 @@ class Game(db.Model):
 	participant = db.Column(db.Text, nullable=False)
 	score = db.Column(db.Integer, nullable=False)
 	rounds = db.Column(db.Integer, nullable=False)
+	winner = db.Column(db.String, nullable=False)
 	app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql:///ottokorhonen"
 
 GameForm = model_form(Game, base_class=FlaskForm, db_session=db.session)
@@ -47,10 +48,10 @@ app.jinja_env.globals["currentUser"] = currentUser
 def initDb():
 	db.create_all()
 
-	game = Game(name="Ensimmäinen peli", participant="Batman, Robin, Joker, Mr. Freeze", score=50, rounds=5)
+	game = Game(name="Ensimmäinen peli", participant="Pelaaja1, pelaaja2", score=50, rounds=5, winner="Pelaaja1")
 	db.session.add(game)
 
-	game = Game(name="Batmanin revanssipeli", participant="Batman, Mr.Freeze", score=50, rounds=10)
+	game = Game(name="Revanssipeli", participant="Pelaaja1, Pelaaja2", score=50, rounds=10, winner="Pelaaja1")
 	db.session.add(game)
 
 	db.session.commit()
