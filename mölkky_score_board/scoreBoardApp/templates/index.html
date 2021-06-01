@@ -1,0 +1,15 @@
+{% set title="Score board" %}
+{% extends "base.html" %}
+
+{% block content %}
+	{% for game in games  %}
+
+	<p>
+		Game: 
+		<a href="game/{{ game.id }}/edit">
+			{{ game.name  }}
+		</a>
+		<a href="/game/{{ game.id  }}/delete">Delete</a>
+	</p>
+	{% endfor  %}
+{% endblock content %}
