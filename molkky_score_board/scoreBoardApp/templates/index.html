@@ -2,43 +2,29 @@
 {% extends "base.html" %}
 
 {% block content %}
-	{% if currentUser()  %}
-		{% for game in games  %}
-			<table class="table table-hover">
-				<tr>
-					<th>Peli</th>
-					<th>Osallistujat</th>
-					<th>Pisteet</th>
-					<th>Kierrokset</th>
-					<th>Voittaja</th>
-				</tr>
+                {% for game in games  %}
+                        <table class="table table-hover">
 
-				<td>{{game.name}}</td>
-				<td>{{game.participant}}</td>
-				<td>{{game.score}}</td>
-				<td>{{game.rounds}}</td>
-				<td>{{game.winner}}</td>
-				<td><a href="/game/{{game.id}}/edit">Edit</a></td>
-				<td><a href="/game/{{game.id}}/delete">Delete</a></td>
-			</table>
-		{% endfor  %}
-	{% else  %}
-	{% for game in games  %}
-                <table>
                                 <tr>
                                         <th>Peli</th>
-					<th>Osallistujat</th>
+                                        <th>Osallistujat</th>
                                         <th>Pisteet</th>
                                         <th>Kierrokset</th>
-					<th>Voittaja</th>
+                                        <th>Voittaja</th>
                                 </tr>
+
                                 <td>{{game.name}}</td>
-				<td>{{game.participant}}</td>
+                                <td>{{game.participant}}</td>
                                 <td>{{game.score}}</td>
                                 <td>{{game.rounds}}</td>
-				<th>{{game.winner}}</td>
-                        </table>
+                                <td>{{game.winner}}</td>
+                                {% if currentUser()  %}
 
-                {% endfor  %}
-	{% endif  %}
+                                <td><a href="/game/{{game.id}}/edit">Edit</a></td>
+                                <td><a href="/game/{{game.id}}/delete">Delete</a></td>
+                                {% endif %}
+
+                        </table>
+                {% endfor %}
 {% endblock content %}
+
